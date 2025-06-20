@@ -1,0 +1,57 @@
+version: "3.9"
+
+services:
+  db:
+    image: postgres:16
+    container_name: postgresdb
+    restart: always
+    environment:
+      POSTGRES_USER: ${PG_USER}
+      POSTGRES_PASSWORD: ${PG_PASSWORD}
+      POSTGRES_DB: ${PG_DATABASE}
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - conexao
+
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin
+    restart: always
+    environment:
+      PGADMIN_DEFAULT_EMAIL: ${PGADMIN_DEFAULT_EMAIL}
+      PGADMIN_DEFAULT_PASSWORD: ${PGADMIN_DEFAULT_PASSWORD}
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+      - ./servers.json:/pgadmin4/servers.json
+    ports:
+      - "5050:80"
+    networks:
+      - conexao
+
+  api:
+    build: .
+    container_name: api
+    restart: always
+    env_file:
+      - .env
+    working_dir: /app
+    volumes:
+      - .:/app
+    command: npm start
+    ports:
+      - "3000:3000"
+    depends_on:
+      - db
+    networks:
+      - conexao
+
+volumes:
+  postgres_data:
+  pgadmin_data:
+
+networks:
+  conexao:
+    driver: bridge
