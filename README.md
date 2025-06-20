@@ -49,7 +49,7 @@ A user management API built with Express and PostgreSQL, fully package with Dock
 
 ```bash
    git clone https://github.com/smthy1/user-management.git
-   cd user-api
+   cd user-management
 ```
 
 2. Build and start the containers:
@@ -160,7 +160,7 @@ Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalment
 
 ```bash
    git clone https://github.com/smthy1/user-management.git
-   cd user-api
+   cd user-management
 ```
 
 2. Gere os containers:
