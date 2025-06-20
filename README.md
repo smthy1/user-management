@@ -1,6 +1,6 @@
 # 🌎 User Management
 
-A user management API built with Express and PostgreSQL, fully package with Docker. The goal with this project is learn to develop in MVC patterns.
+A user management API built with Express and PostgreSQL, fully package with Docker. My goal with this project is learn to develop in MVC patterns.
 
 ## 📦 Features
 
@@ -111,7 +111,7 @@ Developed by [smthy1](https://github.com/smthy1). Contacte me via [email](mailto
 
 # 🇧🇷 API de Usuários
 
-Este projeto é uma evolução do meu antigo projeto. However, my goal with this project is to practice my development following the MVC pattern so that I can implement new features in the future, such as a JWT validation, web interface, etc.
+Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalmente empacotados com Docker. Meu objetivo com esse projeto é aprender a desenvolver nos padrões MVC.
 
 ## 📦 Funcionalidades
 
