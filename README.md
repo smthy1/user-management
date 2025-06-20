@@ -1,6 +1,6 @@
 # 🌎 User Management
 
-A user management API built with Express and PostgreSQL, fully package with Docker. My goal with this project is learn to develop in MVC patterns.
+A user management API built with Express and PostgreSQL, fully package with Docker. My goal with this project is learn to develop in MVC patterns. 
 
 ## 📦 Features
 
@@ -85,7 +85,7 @@ Wait a few seconds for Docker build and start the containers, then you're ready 
 
 ## 🧠 What I learned
 
-    - 🏛️ Build projects in MVC pattern
+- 🏛️ Modularization based on MVC the pattern
 
 - ✅ API creation with Express.js
 
@@ -198,6 +198,8 @@ Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois diss
   - DELETE /delete-user – { "email":"...", "password":"..." }
 
 ## 🧠 O que aprendi
+
+- 🏛️ Modularização baseada no padrão MVC
 
 - ✅ Criação de API com Express.js
 
