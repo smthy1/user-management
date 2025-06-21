@@ -38,4 +38,20 @@ async function verifyEmail(email) {
 };
 
 
-export { verifyUsername, verifyEmail };
+async function getInfos(username) {
+    try {
+        const query = `
+            SELECT * FROM users
+            WHERE username = $1
+        `;
+
+        const user = await client.query(query, [username]);
+
+        return { userId: user.id ,username: user.username };
+    } catch (err) {
+        return { err };
+    }
+};
+
+
+export { verifyUsername, verifyEmail, getInfos };

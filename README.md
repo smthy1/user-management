@@ -30,6 +30,8 @@ A user management API built with Express and PostgreSQL, fully package with Dock
 
 - Docker
 
+- JWT (jsonwebtoken)
+
 - bcrypt
 
 - express-rate-limit
@@ -72,16 +74,21 @@ Wait a few seconds for Docker build and start the containers, then you're ready 
 
 - You can explore the database visually, if you want. Access pgAdmin at http://localhost:5050 | Login: admin@admin.com | Password: admin | Password to connect in the database: postgresdb
 
+- Base URL: http://localhost:3000/users
+
 - To test correctly, API routes require body params:
 
   - POST /register – { "username": "...", "email":"...", "password": "..." }
+  
   - POST /login – { "username":"...", "password":"..."}
 
-  - POST /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
+  - PATCH /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
 
-  - POST /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
+  - PATCH /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
 
   - DELETE /delete-user – { "email":"...", "password":"..." }
+
+- To test the routes PATCH and DELETE, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
 
 ## 🧠 What I learned
 
@@ -141,6 +148,8 @@ Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalment
 
 - Docker
 
+- JWT (jsonwebtoken)
+
 - bcrypt
 
 - express-rate-limit
@@ -171,24 +180,27 @@ Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalment
 
 Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois disso você já pode testar a API
 
-- URL Base: http://localhost:3000/
+- URL Base: http://localhost:3000/users
 
 3. Endpoints disponíveis:
 
-- POST /register – Registrar usuário
-- POST /login – Login
-- POST /update-username – Mudar o nome de usuário
-- POST /update-password – Alterar a senha
-- DELETE /delete-user – Excluir conta
+- POST /register
+- POST /login
+- POST /update-username
+- POST /update-password
+- DELETE /delete-user
 
 ## ⚠️ Observações
 
 - Você pode explorar a interface do banco, caso for do seu interesse. Access pgAdmin at http://localhost:5050 | Login: admin@gmail.com | Senha: admin | Senha pra conectar ao banco: postgresdb
 
+- URL base: http://localhost:3000/user
+
 
 - Pra testar corretamente, as rotas da API precisam body params:
 
   - POST /register – { "username": "...", "email":"...", "password": "..." }
+  
   - POST /login – { "username":"...", "password":"..."}
 
   - POST /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
@@ -196,6 +208,8 @@ Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois diss
   - POST /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
 
   - DELETE /delete-user – { "email":"...", "password":"..." }
+
+- Para testar as rotas PATCH e DELETE, você precisa fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois, você poderá testar a rota.
 
 ## 🧠 O que aprendi
 

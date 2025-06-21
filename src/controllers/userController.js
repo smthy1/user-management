@@ -1,5 +1,8 @@
 import * as userOperations from '../models/userOperations.js';
 import validator from 'validator';
+import { getInfos } from '../models/utils.js';
+import jwt from 'jsonwebtoken';
+import 'dotenv/config';
 
 const registerUser = async (req, res) => {
     try {
@@ -47,7 +50,16 @@ const loginUser = async (req, res) => {
         if (confirmUser?.erro) {
             return res.status(401).json(confirmUser);
         } else if (confirmUser?.msg) {
-            return res.status(200).json(confirmUser);
+            const userInfos = await getInfos(username);
+
+            const token = jwt.sign(
+                {
+                    userId: userInfos.userId,
+                    username: userInfos.username
+                }, process.env.SECRET, { expiresIn: '1h' }
+            );
+
+            return res.status(200).json({ msg: `Logado como ${username}`, token: token });
         }
     } catch (err) {
         return res.status(500).json({ erro: `Erro inesperado ${err}`});

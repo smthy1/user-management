@@ -1,5 +1,5 @@
 import client from "./connectionModel.js";
-import { verifyUsername, verifyEmail } from "./verifyCredentials.js";
+import { verifyUsername, verifyEmail } from "./utils.js";
 import bcrypt from 'bcrypt';
 
 
