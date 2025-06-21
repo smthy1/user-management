@@ -122,9 +122,9 @@ Feel free to open issues or submit pull requests with suggestions or improvement
 
 Developed by [smthy1](https://github.com/smthy1). Contacte me via [email](mailto:luiz.smith.br@gmail.com)
 
-# 🇧🇷 API de Usuários
+# 🇧🇷 Gerenciamento de usuários
 
-Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalmente empacotados com Docker. Meu objetivo com esse projeto é aprender a desenvolver nos padrões MVC.
+Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalmente empacotados com Docker. Meu objetivo com este projeto é aprender a desenvolver nos padrões MVC.
 
 ## 📦 Funcionalidades
 
