@@ -14,6 +14,8 @@ A user management API built with Express and PostgreSQL, fully package with Dock
 
 - 🗑️ Delete user
 
+- 🧐 JWT validation
+
 - 🔒 Password encryption with bcrypt
 
 - 🚫 Rate limiting to prevent brute-force
@@ -102,6 +104,10 @@ Wait a few seconds for Docker build and start the containers, then you're ready 
 
 - 🤖 Implement format validation of username, password and email fields
 
+- ✍️ Generate JWT validation tokens in login route
+
+- 🧐 Verify tokens by middlewares
+
 - 📦 Dockerizing applications
 
 - ⚙️ Managing environment variables (.env)
@@ -131,6 +137,8 @@ Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalment
 - 🔄 Alterar senha
 
 - 🗑️ Excluir conta
+
+- 🧐 Validação JWT
 
 - 🔒 Encriptação de senha com bcrypt
 
@@ -222,6 +230,10 @@ Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois diss
 - 🛡️ Prevenção de brute force com express-rate-limit
 
 - 🤖 Validação dos formatos dos campos de usuário, senha e e-mail com validator
+
+- ✍️ Gerar tokens de validação JWT na rota de login
+
+- 🧐 Verificar tokens através de middlewares
 
 - 📦 Empacotar aplicações com Docker
 
