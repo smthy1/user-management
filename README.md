@@ -5,6 +5,7 @@ A complete API for user and task management built with Express and PostgreSQL, f
 ## 📦 Features
 
 🧑‍💼 User Features
+   
    - 📝 Register user
 
    - 🔐 User login
@@ -32,8 +33,8 @@ A complete API for user and task management built with Express and PostgreSQL, f
    - 🗑️ Delete user task
    
    - 📄 List all tasks of the authenticated user
-
-   -🔐 Each user can only manage their own tasks
+   
+   - 🔐Each user can only manage their own tasks
 
 ## ⚙️ Technologies used
 
@@ -99,27 +100,30 @@ Task endpoints:
 - Base URL: http://localhost:3000
 
 - To test correctly, API routes require body params:
-   Users routes:
+   - Users routes:
 
       - POST /register – { "username": "...", "email":"...", "password": "..." }
       
       - POST /login – { "username":"...", "password":"..."}
 
-      - PATCH /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
+      - PATCH /username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
 
-      - PATCH /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
+      - PATCH /password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
 
-      - DELETE /delete-user – { "email":"...", "password":"..." }
+      - DELETE /user – { "email":"...", "password":"..." }
 
-      - To test the routes PATCH and DELETE, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
+   - To test PATCH and DELETE routes, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
    
-   Tasks routes:
+   - Tasks routes:
       - POST /tasks/task  —  { "description": "..." }
+      
       - GET /tasks/tasks  —  Just the token
+      
       - PATCH /tasks/task  — { "description": "..." }
+      
       - DELETE /tasks/task  — { "description": "..." }
       
-      - To test these routes, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
+   - To test these routes, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
 
 ## 🧠 What I learned
 
@@ -258,6 +262,7 @@ Endpoints de tarefas:
 
 
 - Pra testar corretamente, as rotas da API precisam body params:
+   
    Rotas do usuário:
       
       - POST /users/register – { "username": "...", "email":"...", "password": "..." }
@@ -270,16 +275,19 @@ Endpoints de tarefas:
 
       - DELETE /users/delete-user – { "email":"...", "password":"..." }
 
-      - Para testar as rotas PATCH e DELETE, você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você poderá testar a rota.
+   - Para testar as rotas PATCH e DELETE, você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você poderá testar a rota.
    
    Rotas das tarefas:
       
       - POST /tasks/task  —  { "description": "..." }
+      
       - GET /tasks/tasks  —  Apenas o token
+      
       - PATCH /tasks/task  — { "description": "..." }
+      
       - DELETE /tasks/task  — { "description": "..." }
       
-      - Para testar estas rotas você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você pode testar a rota.
+   - Para testar estas rotas você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você pode testar a rota.
 
 ## 🧠 O que aprendi
 
