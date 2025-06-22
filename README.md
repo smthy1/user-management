@@ -80,18 +80,18 @@ Wait a few seconds for Docker build and start the containers, then you're ready 
 
 3. Available endpoints:
 
-User endpoints:
-   - POST /users/register
-   - POST /users/login
-   - POST /users/update-username
-   - POST /users/update-password
-   - DELETE /users/delete-user
+   User endpoints:
+      - POST /users/register
+      - POST /users/login
+      - POST /users/update-username
+      - POST /users/update-password
+      - DELETE /users/delete-user
 
-Task endpoints:
-   - POST /tasks/task  —  Create new task
-   - GET /tasks/tasks  —  Get all tasks of the logged-in user
-   - PATCH /tasks/task  — Change task status (completed or not)
-   - DELETE /tasks/task  — Delete a task
+   Task endpoints:
+      - POST /tasks/task  —  Create new task
+      - GET /tasks/tasks  —  Get all tasks of the logged-in user
+      - PATCH /tasks/task  — Change task status (completed or not)
+      - DELETE /tasks/task  — Delete a task
 
 ## ⚠️ Additional notes
 
@@ -159,7 +159,7 @@ Feel free to open issues or submit pull requests with suggestions or improvement
 
 Developed by [smthy1](https://github.com/smthy1). Contacte me via [email](mailto:luiz.smith.br@gmail.com)
 
-# 🇧🇷 Gerenciamento de usuários
+# 🇧🇷 Gerenciamento de Tarefas e Usuários
 
 Uma API completa de gerenciamento de usuários e tarefas, desenvolvida com Express e PostgreSQL, totalmente empacotados com Docker. Este projeto foi desenvolvido para me ajudar a aprender e consolidar padrões de desenvolvimento backend (MVC) e autenticação JWT.
 
@@ -241,18 +241,18 @@ Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois diss
 
 3. Endpoints disponíveis:
 
-Endpoints do usuário:
-   - POST /users/register
-   - POST /users/login
-   - PATCH /users/username
-   - PATCH /users/password
-   - DELETE /users/user
+   Endpoints do usuário:
+      - POST /users/register
+      - POST /users/login
+      - PATCH /users/username
+      - PATCH /users/password
+      - DELETE /users/user
 
-Endpoints de tarefas:
-   - POST /tasks/task  —  Criar tarefas
-   - GET /tasks/tasks  —  Lista todas as tarefas do usuário logado
-   - PATCH /tasks/task  — Altera o status da tarefa (concluída ou não)
-   - DELETE /tasks/task  — Excluí a tarefa
+   Endpoints de tarefas:
+      - POST /tasks/task  —  Criar tarefas
+      - GET /tasks/tasks  —  Lista todas as tarefas do usuário logado
+      - PATCH /tasks/task  — Altera o status da tarefa (concluída ou não)
+      - DELETE /tasks/task  — Excluí a tarefa
 
 ## ⚠️ Observações
 
