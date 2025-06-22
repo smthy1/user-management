@@ -7,9 +7,9 @@ const router = express.Router();
 
 router.post('/register', userController.registerUser);
 router.post('/login', limiter, userController.loginUser);
-router.patch('/update-username', authToken, userController.updateUser);
-router.patch('/update-password', authToken, userController.newPassword);
-router.delete('/delete-user', authToken, userController.delUser);
+router.patch('/username', authToken, userController.updateUser);
+router.patch('/password', authToken, userController.newPassword);
+router.delete('/user', authToken, userController.delUser);
 
 
 export default router;

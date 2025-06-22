@@ -48,7 +48,7 @@ const loginUser = async (req, res) => {
         const confirmUser = await userOperations.login(username, password);
 
         if (confirmUser?.erro) {
-            return res.status(401).json(confirmUser);
+            return res.status(400).json(confirmUser);
         } else if (confirmUser?.msg) {
             const userInfos = await getInfos(username);
 

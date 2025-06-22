@@ -1,26 +1,39 @@
-# 🌎 User Management
+# 🌎 User and Task Management
 
-A user management API built with Express and PostgreSQL, fully package with Docker. My goal with this project is learn to develop in MVC patterns. 
+A complete API for user and task management built with Express and PostgreSQL, fully containerized with Docker. This project was developed to help me learn and solidify backend development patterns (MVC) and JWT-based authentication. 
 
 ## 📦 Features
 
-- 📝 Register user
+🧑‍💼 User Features
+   - 📝 Register user
 
-- 🔐 User login
+   - 🔐 User login
 
-- ✏️ Update username
+   - ✏️ Update username
 
-- 🔄 Change password
+   - 🔄 Change password
 
-- 🗑️ Delete user
+   - 🗑️ Delete user
 
-- 🧐 JWT validation
+   - 🧐 JWT validation
 
-- 🔒 Password encryption with bcrypt
+   - 🔒 Password encryption with bcrypt
 
-- 🚫 Rate limiting to prevent brute-force
+   - 🚫 Rate limiting to prevent brute-force
 
-- 🧪 Format validation of username, password and email fields
+   - 🧪 Format validation of username, password and email fields
+
+✅ Task Features
+
+   - 📌 Create tasks
+
+   - 🔁 Update task status (completed or not)
+
+   - 🗑️ Delete user task
+   
+   - 📄 List all tasks of the authenticated user
+
+   -🔐 Each user can only manage their own tasks
 
 ## ⚙️ Technologies used
 
@@ -62,35 +75,51 @@ A user management API built with Express and PostgreSQL, fully package with Dock
     docker-compose up --build -d
 ```
 
-Wait a few seconds for Docker build and start the containers, then you're ready to test the app. - Base URL: http://localhost:3000/users
+Wait a few seconds for Docker build and start the containers, then you're ready to test the app.
 
 3. Available endpoints:
 
-- POST /register
-- POST /login
-- POST /update-username
-- POST /update-password
-- DELETE /delete-user
+User endpoints:
+   - POST /users/register
+   - POST /users/login
+   - POST /users/update-username
+   - POST /users/update-password
+   - DELETE /users/delete-user
+
+Task endpoints:
+   - POST /tasks/task  —  Create new task
+   - GET /tasks/tasks  —  Get all tasks of the logged-in user
+   - PATCH /tasks/task  — Change task status (completed or not)
+   - DELETE /tasks/task  — Delete a task
 
 ## ⚠️ Additional notes
 
 - You can explore the database visually, if you want. Access pgAdmin at http://localhost:5050 | Login: admin@admin.com | Password: admin | Password to connect in the database: postgresdb
 
-- Base URL: http://localhost:3000/users
+- Base URL: http://localhost:3000
 
 - To test correctly, API routes require body params:
+   Users routes:
 
-  - POST /register – { "username": "...", "email":"...", "password": "..." }
-  
-  - POST /login – { "username":"...", "password":"..."}
+      - POST /register – { "username": "...", "email":"...", "password": "..." }
+      
+      - POST /login – { "username":"...", "password":"..."}
 
-  - PATCH /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
+      - PATCH /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
 
-  - PATCH /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
+      - PATCH /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
 
-  - DELETE /delete-user – { "email":"...", "password":"..." }
+      - DELETE /delete-user – { "email":"...", "password":"..." }
 
-- To test the routes PATCH and DELETE, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
+      - To test the routes PATCH and DELETE, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
+   
+   Tasks routes:
+      - POST /tasks/task  —  { "description": "..." }
+      - GET /tasks/tasks  —  Just the token
+      - PATCH /tasks/task  — { "description": "..." }
+      - DELETE /tasks/task  — { "description": "..." }
+      
+      - To test these routes, you need to login, copy the token and select Authorization → Bearer Token and paste the token. Then you can test the route.
 
 ## 🧠 What I learned
 
@@ -112,7 +141,11 @@ Wait a few seconds for Docker build and start the containers, then you're ready 
 
 - ⚙️ Managing environment variables (.env)
 
-- 🔗 Container communication
+- 🔗 Container connection
+
+- 📁 CRUD operations for user-specific tasks
+
+- 🔐 Protected routes with access control (each user manages only their data)
 
 ## 🤝 Contributing
 
@@ -124,27 +157,40 @@ Developed by [smthy1](https://github.com/smthy1). Contacte me via [email](mailto
 
 # 🇧🇷 Gerenciamento de usuários
 
-Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalmente empacotados com Docker. Meu objetivo com este projeto é aprender a desenvolver nos padrões MVC.
+Uma API completa de gerenciamento de usuários e tarefas, desenvolvida com Express e PostgreSQL, totalmente empacotados com Docker. Este projeto foi desenvolvido para me ajudar a aprender e consolidar padrões de desenvolvimento backend (MVC) e autenticação JWT.
 
 ## 📦 Funcionalidades
 
-- 📝 Registrar usuário
+🧑‍💼 Features de usuário:
+   - 📝 Registrar usuário
 
-- 🔐 Login de usuário
+   - 🔐 Login de usuário
 
-- ✏️ Mudar nome de usuário
+   - ✏️ Mudar nome de usuário
 
-- 🔄 Alterar senha
+   - 🔄 Alterar senha
 
-- 🗑️ Excluir conta
+   - 🗑️ Excluir conta
 
-- 🧐 Validação JWT
+   - 🧐 Validação JWT
 
-- 🔒 Encriptação de senha com bcrypt
+   - 🔒 Encriptação de senha com bcrypt
 
-- 🚫 Prevenção de brute force com Express rate limit
+   - 🚫 Prevenção de brute force com Express rate limit
 
-- 🧪 Validação dos formatos dos campos de usuário, senha e e-mail
+   - 🧪 Validação dos formatos dos campos de usuário, senha e e-mail
+
+✅ Task Features
+
+   - 📌 Criar tarefas
+
+   - 🔁 Alterar o status da tarefa (concluída ou não)
+
+   - 🗑️ Deletar tarefa
+
+   - 📄 Listar todas as tarefas do usuário logado
+
+   - 🔐 Cada usuário só pode gerenciar suas próprias tarefas
 
 ## ⚙️ Tecnologias utilizadas
 
@@ -188,36 +234,52 @@ Uma API de gerenciamento de usuários criada com Express e PostgreSQL, totalment
 
 Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois disso você já pode testar a API
 
-- URL Base: http://localhost:3000/users
 
 3. Endpoints disponíveis:
 
-- POST /register
-- POST /login
-- POST /update-username
-- POST /update-password
-- DELETE /delete-user
+Endpoints do usuário:
+   - POST /users/register
+   - POST /users/login
+   - PATCH /users/username
+   - PATCH /users/password
+   - DELETE /users/user
+
+Endpoints de tarefas:
+   - POST /tasks/task  —  Criar tarefas
+   - GET /tasks/tasks  —  Lista todas as tarefas do usuário logado
+   - PATCH /tasks/task  — Altera o status da tarefa (concluída ou não)
+   - DELETE /tasks/task  — Excluí a tarefa
 
 ## ⚠️ Observações
 
 - Você pode explorar a interface do banco, caso for do seu interesse. Access pgAdmin at http://localhost:5050 | Login: admin@gmail.com | Senha: admin | Senha pra conectar ao banco: postgresdb
 
-- URL base: http://localhost:3000/user
+- URL base: http://localhost:3000
 
 
 - Pra testar corretamente, as rotas da API precisam body params:
+   Rotas do usuário:
+      
+      - POST /users/register – { "username": "...", "email":"...", "password": "..." }
+      
+      - POST /users/login – { "username":"...", "password":"..."}
 
-  - POST /register – { "username": "...", "email":"...", "password": "..." }
-  
-  - POST /login – { "username":"...", "password":"..."}
+      - PATCH /users/username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
 
-  - POST /update-username – { "currentUsername":"...", "newUsername":"...", "password":"..." }
+      - PATCH /users/password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
 
-  - POST /update-password – { "currentPassword":"...", "newPassword":"...", "email":"..." }
+      - DELETE /users/delete-user – { "email":"...", "password":"..." }
 
-  - DELETE /delete-user – { "email":"...", "password":"..." }
-
-- Para testar as rotas PATCH e DELETE, você precisa fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois, você poderá testar a rota.
+      - Para testar as rotas PATCH e DELETE, você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você poderá testar a rota.
+   
+   Rotas das tarefas:
+      
+      - POST /tasks/task  —  { "description": "..." }
+      - GET /tasks/tasks  —  Apenas o token
+      - PATCH /tasks/task  — { "description": "..." }
+      - DELETE /tasks/task  — { "description": "..." }
+      
+      - Para testar estas rotas você precisará fazer login, copiar o token, selecionar Authorization → Bearer Token e colar o token. Depois disso você pode testar a rota.
 
 ## 🧠 O que aprendi
 
@@ -240,6 +302,10 @@ Aguarde alguns segundos até o Docker gerar e iniciar os containers, depois diss
 - ⚙️ Gerenciamento de variáveis de ambiente (.env)
 
 - 🔗 Comunição entre os containers
+
+- 📁 Operações CRUD para tarefas específicas do usuário
+
+- 🔐 Rotas protegidas com controle de acesso (cada usuário gerencia apenas seus dados)
 
 ## 🤝 Contribuições
 

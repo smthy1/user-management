@@ -47,7 +47,7 @@ async function getInfos(username) {
 
         const user = await client.query(query, [username]);
 
-        return { userId: user.id ,username: user.username };
+        return { userId: user.rows[0].id, username: user.rows[0].username };
     } catch (err) {
         return { err };
     }

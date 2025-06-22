@@ -70,7 +70,7 @@ async function updateUsername(currentUsername, newUsername, password) {
         const query = `
             UPDATE users
             SET username = $1
-            WHERE username = $2;
+            WHERE username = $2
         `;
 
         await client.query(query, [newUsername, currentUsername]);
